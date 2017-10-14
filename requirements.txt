@@ -1,0 +1,13 @@
+chardet==3.0.4
+dj-database-url==0.4.2
+Django==1.11.2
+django-crispy-forms==1.6.1
+formatizer==0.1.1
+future==0.16.0
+gunicorn==19.7.1
+olefile==0.44
+Pillow==4.2.1
+psycopg2==2.7.3.1
+pytz==2017.2
+six==1.11.0
+ww==0.2.1
