@@ -13,7 +13,7 @@ from menus.models import Item
 from .forms import RegisterForm
 from .models import Profile
 
-from ww import f
+
 
 User = get_user_model()
 
@@ -56,7 +56,6 @@ class ProfileDetailView(DetailView):
 	template_name = 'profiles/user.html'	
 	def get_object(self):
 		username  = self.kwargs.get("username")
-		print username		
 		if username is None:
 			raise Http404
 		return get_object_or_404(User, username__iexact=username, is_active=True)
@@ -64,11 +63,10 @@ class ProfileDetailView(DetailView):
 	def get_context_data(self, *args,**kwargs):
 		context 				 = super(ProfileDetailView, self).get_context_data(*args, **kwargs)
 		query 					= self.request.GET.get('q')
- 		user 					= context['user']
-		is_following 			= False
+		user = context['user']
+		is_following= False
 		if user.profile in self.request.user.is_following.all():
 			is_following 		= True
-		print is_following
 		context['is_following'] = is_following
 		items_exist 			= Item.objects.filter(user=user).exists()
 		qs = RestaurantLocation.objects.filter(owner=user).search(query)

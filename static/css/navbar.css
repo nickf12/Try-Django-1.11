@@ -1,0 +1,10 @@
+/* Show it's not fixed to the top */
+body {
+  min-height: 1000px;
+}
+.navbar {
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    border-bottom-width: 2px;
+    margin-bottom: 0px;
+}  

@@ -25,7 +25,7 @@ SECRET_KEY = '_-zur*u+@2bh8$1a@8ug3wca9-9e1)cfsnw8bly7=d6hr(fsey'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','']
 
 # gmail settings
 EMAIL_HOST = 'smtp.gmail.com'
@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'restaurants',
     'menus',
     'profiles',
+    'corsi',
 ]
 
 MIDDLEWARE = [
@@ -136,6 +137,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    #'/var/www/static/',
+]
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')
+
 
 
 LOGOUT_REDIRECT_URL = '/login'

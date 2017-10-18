@@ -1,7 +1,43 @@
 {% extends "base.html" %}
+{% load staticfiles %}
+
+{% block jumbotron %}
+<div class="jumbotron" >
+	<div class="container">
+	<div class="row">
+		<div class="col-sm-6">
+			<h1>Marco Web Page</h1>
+			<p>Hi i am Marco and this is my web page.
+			<a href='{% url "login" %}'>Sign in</a> Or <a href='{% url "register" %}'>Register</a> </p>
+		</div>
+		<div class="col-sm-6" style="height: auto;">
+			<iframe src="https://www.youtube.com/embed/Ue9CzDzvOak?ecver=1" frameborder="2" allowfullscreen></iframe>
+		</div>
+	</div>
+		
+	</div>
+</div>
+
+{% endblock %}
 {% block content %}
 {{block.super}}
-<p>this is html {{html_var}} coming true</p>
+<div class="raw">
+	<div class="col-sm-8 col-sm-offset-2">
+		<img src='{% static "img/uni.jpg" %}' />
+		<p>
+			<b>Hi I am Marco, music teacher of swiss school,
+			Hi I am Marco, music teacher of swiss school,
+			Hi I am Marco, music teacher of swiss school,
+			Hi I am Marco, music teacher of swiss school,
+			Hi I am Marco, music teacher of swiss school,
+			Hi I am Marco, music teacher of swiss school,
+			Hi I am Marco, music teacher of swiss school,
+			</b>
+		</p>
+
+	</div>
+</div>
+
 {% endblock %}
 
 

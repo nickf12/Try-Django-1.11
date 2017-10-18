@@ -9,7 +9,6 @@ from django.views.generic import TemplateView, ListView, DetailView, CreateView,
 from django.db.models import Q
 from django.http import HttpResponse, HttpResponseRedirect
 
-from ww import f
 
 from .forms import RestaurantCreateForm, RestaurantLocationCreateForm
 from .models import RestaurantLocation
@@ -33,6 +32,7 @@ class RestaurantCreateView(LoginRequiredMixin, CreateView):
 	form_class = RestaurantLocationCreateForm
 	login_url = '/login/'
 	template_name = 'form.html'
+	
 	#success_url = "/restaurants/"
 	
 	def form_valid(self, form):
@@ -53,7 +53,7 @@ class RestaurantUpdateView(LoginRequiredMixin, UpdateView):
 	
 	def get_context_data(self, *args, **kwargs):
 		context = super(RestaurantUpdateView, self).get_context_data(*args, **kwargs)
-		context['title'] = f('Update Restaurant: {self.get_object().name}')
+		context['title'] = 'Update Restaurant: '+ self.get_object().name
 		return context
 	
 	def get_queryset(self):

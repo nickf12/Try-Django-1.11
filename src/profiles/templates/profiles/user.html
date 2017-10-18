@@ -2,6 +2,7 @@
 {% block head_title %} {{ user.username }} || {{block.super}}{% endblock head_title %}
 {% block content %}
 <h1>{{ user.username }}</h1>
+<img src='{{ user.profile.photo.url }}' width="240">
 <p>{% include 'profiles/snippet/follow-form.html' with username=user.username is_following=is_following %}</p>
 <form class='form' method='GET' action='.'>
 	<input type='text' placeholder="Search.." name='q' value='{{ request.GET.q }}'>

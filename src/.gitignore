@@ -1,0 +1,136 @@
+<<<<<<< HEAD
+marco/settings/local.py
+marco/settings/local2.py
+
+db.sqlite3
+
+.py[cod]
+
+=======
+>>>>>>> 77610464d3cd34877f9e06d6d551703a72e98bf8
+.DS_Store
+bin/
+include/
+pip-selfcheck.json
+<<<<<<< HEAD
+=======
+*.komodoproject
+>>>>>>> 77610464d3cd34877f9e06d6d551703a72e98bf8
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+<<<<<<< HEAD
+=======
+MANIFEST
+>>>>>>> 77610464d3cd34877f9e06d6d551703a72e98bf8
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+<<<<<<< HEAD
+=======
+.static_storage/
+.media/
+>>>>>>> 77610464d3cd34877f9e06d6d551703a72e98bf8
+local_settings.py
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+<<<<<<< HEAD
+=======
+env.bak/
+venv.bak/
+>>>>>>> 77610464d3cd34877f9e06d6d551703a72e98bf8
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+<<<<<<< HEAD
+.mypy_cache/
+=======
+.mypy_cache/
+>>>>>>> 77610464d3cd34877f9e06d6d551703a72e98bf8

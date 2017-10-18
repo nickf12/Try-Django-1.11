@@ -9,7 +9,6 @@ from django.core.urlresolvers import reverse
 
 from .utils import code_generator
 
-from ww import f
 
 User =  settings.AUTH_USER_MODEL 
 
@@ -33,6 +32,7 @@ class Profile(models.Model):
 	followers		= models.ManyToManyField(User, related_name='is_following', blank=True) 	 	
 	#following		= models.ManyToManyField(User, related_name='following', blank=True) 	 	# user.profile__set.all()
 	activation_key 	= models.CharField(max_length=120, blank=True, null=True)
+	photo 			= models.ImageField(upload_to='profile_image', blank=True)
 	activated		= models.BooleanField(default=False)
 	timestamp 		= models.DateTimeField(auto_now_add=True)
 	updated 		= models.DateTimeField(auto_now=True)
@@ -42,17 +42,14 @@ class Profile(models.Model):
 	def __str__(self):
 		return self.user.username
 	def send_activation_email(self):
-		print "Activation"
 		if not self.activated: 
 			self.activation_key = code_generator()
 			self.save()
 			path_ = reverse('activate', kwargs={"code":self.activation_key})
 			subject = 'Activate Account'
 			from_email = settings.DEFAULT_FROM_EMAIL
-			message = f("Activate your account here :{path_}")
+			message = "Activate your account here :"+ path_
 			recipient_list = [self.user.email]
-			print "user email to --> "
-			print self.user.email
 			html_message = f("<p>Activate your account here :{path_}</p>")
 			
 			sent_mail = send_mail(
@@ -74,8 +71,8 @@ def post_save_user_reciver(sender, instance, created, *args, **kwargs):
 		default_user_profile = Profile.objects.get_or_create(user__id=1)[0] # user__username = username
 		default_user_profile.followers.add(instance)
 		#default_user_profile.save()
-		profile.followers.add(default_user_profile.user)
-		profile.followers.add(2)
+		#profile.followers.add(default_user_profile.user)
+#		profile.followers.add(2)
 		
 		
 post_save.connect(post_save_user_reciver,  sender=User)

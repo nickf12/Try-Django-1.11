@@ -34,7 +34,6 @@ class RegisterForm(forms.ModelForm):
 		if commit:
 			user.save()
 			
-			print user.profile
 
 			user.profile.send_activation_email()
 			
