@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.conf import settings
+from django.core.urlresolvers import reverse
 
 User =  settings.AUTH_USER_MODEL 
 
@@ -19,3 +20,7 @@ class Corsi(models.Model):
 	
 	timestamp 	= models.DateTimeField(auto_now_add=True)
 	updated 	= models.DateTimeField(auto_now=True)
+	
+	def get_absolute_url(self):
+		#return f('/restaurants/{self.slug}')
+		return reverse('corsi:detail', kwargs={"pk":self.pk})

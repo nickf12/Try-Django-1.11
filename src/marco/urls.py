@@ -39,4 +39,6 @@ urlpatterns = [
     url(r'^restaurants/', include('restaurants.urls', namespace='restaurants')),
     url(r'^u/', include('profiles.urls', namespace='profiles')),
     url(r'^items/', include('menus.urls', namespace='menus')),
+    url(r'^corsi/', include('corsi.urls', namespace='corsi')),
+    
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
